@@ -1,0 +1,254 @@
+.heroSection {
+  background-color: #ffffff;
+  margin-top: -10vh;
+  min-height: 80vh;
+  padding: 5px 15px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatcontainer {
+  width: 100%;
+  max-width: 1200px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.title {
+  color: #000;
+  text-align: center;
+  font-family: "League Spartan";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 2px 0;
+}
+
+.logo {
+  width: 10vh;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.username {
+  font-family: 'League Spartan';
+  font-size: 11px;
+  font-weight: 200;
+  line-height: 10.12px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+}
+
+.stats {
+  font-family: 'League Spartan';
+  font-size: 11px;
+  font-weight: 100;
+  line-height: 10.12px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+}
+
+.followers {
+  font-family: 'League Spartan';
+  font-size: 11px;
+  font-weight: 100;
+  line-height: 10.12px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+}
+
+.chatmessages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.messageWrapper {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+}
+
+.messageBubble p {
+  margin: 0;
+  font-family: 'League Spartan';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14.72px;
+  text-align: center;
+}
+
+.avatarCircle {
+  position: absolute;
+  left: 10px;
+  bottom: -30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(129.45% 114.04% at 50.88% 50.88%, #FFFFFF 31%, #024A92 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  z-index: 2;
+}
+
+.avatarImage {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.chatmessages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustar el mensaje del usuario */
+.userMessage {
+  width: 95%; /* Reducido de 100% para evitar desbordamiento */
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0; /* Eliminado el padding derecho */
+  margin-left: auto; /* Para mantenerlo alineado a la derecha */
+  box-sizing: border-box;
+}
+
+.userMessage .messageBubble {
+  background-color: #515151;
+  color: white;
+  max-width: 60%;
+  margin-right: 15px; /* Aumentado el margen derecho */
+}
+
+/* Mantener consistencia con los mensajes del bot */
+.messageWrapper:not(.userMessage) {
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.messageBubble {
+  background-color: #D9D9D9;
+  padding: 8px 10px;
+  border-radius: 10px;
+  max-width: 85%;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.buttonContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espacio entre botones */
+}
+
+.responseButton {
+  background: linear-gradient(90deg, #2E8CB3 0%, #06345D 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: 'League Spartan';
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  max-width: 300px;
+  display: block; /* Asegura que el botón tome el ancho especificado */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+.responseButton:hover {
+  background-color: #333333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 15px 10px;
+  }
+
+  .chatcontainer {
+    height: 90vh;
+  }
+
+  .messagebubble {
+    max-width: 100%;
+  }
+
+  .formcontrol {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 10vh;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .chatform {
+    padding: 10px;
+  }
+
+  .btnClean,
+  .btnsend {
+    width: 35px;
+    height: 35px;
+  }
+}

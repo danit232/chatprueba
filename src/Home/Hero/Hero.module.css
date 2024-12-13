@@ -1,0 +1,388 @@
+/* Hero.module.css */
+.heroSection {
+  margin-top: 5vh;
+  background-color: white;
+  min-height: 75vh;
+  padding: 25px 15px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.text1 {
+  color: #000000;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 100;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.text2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.contentBlock {
+  margin: 3rem 0;
+}
+
+.paragraph {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-family: 'League Spartan', sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  letter-spacing: 0.02em;
+}
+
+.centerTitle {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 4rem 0;
+  line-height: 1.2;
+}
+
+.messageSection {
+  margin-top: 4rem;
+  gap: 1.5rem;
+}
+
+.presentation {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 22.08px;
+  text-align: center;
+}
+
+.leaveMessage {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 33.12px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Para pantallas medianas */
+@media (min-width: 768px) {
+  .imageContainer {
+    max-width: 400px; /* Reducimos aún más para tablets */
+  }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1024px) {
+  .imageContainer {
+    max-width: 350px; /* Tamaño más compacto para desktop */
+  }
+}
+
+.imageContainer {
+  margin-top: -5vh;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(1px 28px 15.3px rgba(0, 0, 0, 0.22));
+}
+
+.circle, .circle2 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.circle {
+  border: 30px solid #2bb1ffa2; /* Aumentado de 5px a 12px */
+  animation: height 5s linear infinite,
+             width 1s linear infinite,
+             cornerbottomright 25s linear infinite,
+             cornerbottomleft 15s linear infinite,
+             cornertopright 5s linear infinite,
+             cornertopleft 35s linear infinite,
+             rotating 10s linear infinite;
+}
+
+.circle2 {
+  border: 30px solid #0026b173; /* Aumentado de 6px a 14px */
+  animation: height 2s linear infinite,
+             width 1s linear infinite,
+             cornerbottomright 5s linear infinite,
+             cornerbottomleft 25s linear infinite,
+             cornertopright 15s linear infinite,
+             cornertopleft 35s linear infinite,
+             rotating2 5s linear infinite;
+}
+.recording .circle {
+  animation: rotating 10s linear infinite, pulseCircle 1s ease-in-out infinite;
+}
+
+.recording .circle2 {
+  animation: rotating2 10s linear infinite, pulseCircle 1s ease-in-out infinite 0.5s;
+}
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* El resto de las animaciones se mantienen igual */
+@keyframes cornertopleft {
+  0% { border-top-left-radius: 38%; }
+  50% { border-top-left-radius: 50%; }
+  100% { border-top-left-radius: 38%; }
+}
+
+@keyframes cornertopright {
+  0% { border-top-right-radius: 38%; }
+  50% { border-top-right-radius: 50%; }
+  100% { border-top-right-radius: 38%; }
+}
+
+@keyframes cornerbottomleft {
+  0% { border-bottom-left-radius: 39%; }
+  50% { border-bottom-left-radius: 50%; }
+  100% { border-bottom-left-radius: 39%; }
+}
+
+@keyframes cornerbottomright {
+  0% { border-bottom-right-radius: 38%; }
+  50% { border-bottom-right-radius: 50%; }
+  100% { border-bottom-right-radius: 38%; }
+}
+
+@keyframes width {
+  0% { transform: skewX(0deg); }
+  25% { transform: skewX(15deg); }
+  50% { transform: skewX(30deg) rotate(360deg); }
+  75% { transform: skewX(-15deg); }
+  100% { transform: skewX(0deg); }
+}
+
+@keyframes height {
+  0% { transform: skewY(0deg); }
+  25% { transform: skewY(15deg); }
+  75% { transform: skewY(-15deg); }
+  100% { transform: skewY(0deg); }
+}
+
+@keyframes rotating {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotating2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.waveWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Nueva versión de la animación */
+.imageContainer:has(.microphoneWrapper:active) .voz {
+  animation: imageScale 1s infinite;
+}
+
+@keyframes imageScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.microphone {
+  color: #1E1E1E;
+  opacity: 0.34;
+}
+
+/* Cuando el botón está activo, hacemos pulsar la imagen */
+.microphoneWrapper:active + .voz,
+.microphoneWrapper:active ~ .voz {
+  animation: imageScale 1s infinite;
+}
+
+@keyframes imageScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Ajustes responsive */
+@media (min-width: 768px) {
+  .imageContainer {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageContainer {
+    max-width: 350px;
+  }
+}
+
+/* Ajustes responsive existentes */
+@media (min-width: 768px) {
+  .imageContainer {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageContainer {
+    max-width: 350px;
+  }
+}
+.microphone {
+  color: #1E1E1E;
+  opacity: 0.34;
+}
+
+/* Ajusta el responsive si lo necesitas */
+@media (max-width: 768px) {
+  .presentation {
+    margin-bottom: -5vh;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .leaveMessage {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation {
+    font-size: 1.5rem;
+  }
+
+  .leaveMessage {
+    font-size: 2.5rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .text1 {
+    font-size: 3rem;
+  }
+
+  .text2 {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .centerTitle {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .text1 {
+    font-size: 2.5rem;
+  }
+
+  .text2 {
+    font-size: 1.75rem;
+  }
+
+  .paragraph {
+    font-size: 1.3rem;
+  }
+
+  .centerTitle {
+    font-size: 2rem;
+    margin: 2.5rem 0;
+  }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400&display=swap');
+
+body {
+  /* background-color: var( --stone-50); */
+  background-color: #ffff;
+}
+
+:root {
+  /* Colores 'stone' */
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --stone-950: #0c0a09;
+
+  /* Otros colores  */
+  --blue-300: #89cfff;
+  --blue-600: #0d6efd;
+  --blue-900: #144194;
+  --blue-950: #11295a;
+
+  --green-1: #d2d2d2;
+  --green-2: #62912c;
+
+  --red-1: #ffe3e6;
+  --red-2: #ed4d5c;
+
+  --purple-1: #9a55ff;
+  --purple-2: #47178e;
+
+  --black-1: #070707;
+}
+
+
+:root {
+  --scrollcolor: #fff;
+  --scrollbackground: #141e27;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}

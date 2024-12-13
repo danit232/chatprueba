@@ -1,0 +1,295 @@
+.heroSection {
+  margin-top: 3vh;
+  background-color: white;
+  min-height: 75vh;
+  padding: 25px 15px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.text1 {
+  margin-bottom: 5vh;
+  text-align: center;
+  font-family: "League Spartan";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: linear-gradient(0deg, #FFF -203.57%, #074F92 176.79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(1px 28px 15.3px rgba(0, 0, 0, 0.395));
+}
+
+.circle, .circle2 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/* Mantén todas las animaciones existentes pero renómbralas */
+.circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 30px solid #2bb1ffa2;
+}
+
+.circle2 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 30px solid #0026b173;
+}
+
+/* Animación simple de rotación cuando no está hablando */
+.circle.speaking{
+  animation: rotating 10s linear infinite;
+}
+
+.circle2.speaking{
+  animation: rotating2 10s linear infinite, pulseCircle 1s ease-in-out infinite 0.5s;
+}
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+
+/* Animaciones completas cuando está hablando */
+.circle:not(.speaking) {
+  animation: height 5s linear infinite,
+             width 1s linear infinite,
+             cornerbottomright 25s linear infinite,
+             cornerbottomleft 15s linear infinite,
+             cornertopright 5s linear infinite,
+             cornertopleft 35s linear infinite,
+             rotating 10s linear infinite;
+}
+
+.circle2:not(.speaking)  {
+  animation: height 2s linear infinite,
+             width 1s linear infinite,
+             cornerbottomright 5s linear infinite,
+             cornerbottomleft 25s linear infinite,
+             cornertopright 15s linear infinite,
+             cornertopleft 35s linear infinite,
+             rotating2 5s linear infinite;
+}
+
+/* El resto de las animaciones se mantienen igual */
+@keyframes cornertopleft {
+  0% { border-top-left-radius: 38%; }
+  50% { border-top-left-radius: 50%; }
+  100% { border-top-left-radius: 38%; }
+}
+
+@keyframes cornertopright {
+  0% { border-top-right-radius: 38%; }
+  50% { border-top-right-radius: 50%; }
+  100% { border-top-right-radius: 38%; }
+}
+
+@keyframes cornerbottomleft {
+  0% { border-bottom-left-radius: 39%; }
+  50% { border-bottom-left-radius: 50%; }
+  100% { border-bottom-left-radius: 39%; }
+}
+
+@keyframes cornerbottomright {
+  0% { border-bottom-right-radius: 38%; }
+  50% { border-bottom-right-radius: 50%; }
+  100% { border-bottom-right-radius: 38%; }
+}
+
+@keyframes width {
+  0% { transform: skewX(0deg); }
+  25% { transform: skewX(15deg); }
+  50% { transform: skewX(30deg) rotate(360deg); }
+  75% { transform: skewX(-15deg); }
+  100% { transform: skewX(0deg); }
+}
+
+@keyframes height {
+  0% { transform: skewY(0deg); }
+  25% { transform: skewY(15deg); }
+  75% { transform: skewY(-15deg); }
+  100% { transform: skewY(0deg); }
+}
+
+@keyframes rotating {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotating2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.waveWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wave {
+  fill: #D9D9D9;
+  transition: height 0.2s ease;
+}
+
+.animating .wave {
+  animation: waveAnimation 1s infinite;
+}
+
+.wave1 { animation-delay: 0.0s; }
+.wave2 { animation-delay: 0.1s; }
+.wave3 { animation-delay: 0.2s; }
+.wave4 { animation-delay: 0.3s; }
+.wave5 { animation-delay: 0.4s; }
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* Animaciones del Logo */
+.logoContainer {
+  width: 90px;
+  height: 90px;
+  margin: 4rem auto 0;
+  background-color: #EAEAEA;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.logoContainer:not(.speaking) {
+  animation: float 3s ease-in-out infinite;
+}
+
+.logoContainer:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  transition: opacity 0.5s ease;
+}
+
+.logo.speaking {
+  opacity: 0.5;
+}
+
+.logo:not(.speaking) {
+  opacity: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Nuevas animaciones para el logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .imageContainer {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageContainer {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .text1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text1 {
+    font-size: 3.4rem;
+  }
+}

@@ -1,0 +1,503 @@
+.contacto {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    /* Changed to column to stack title and form */
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    /* Increased margin to separate from form */
+    text-align: center;
+    color: #000000;
+}
+
+/* Ajustar el contenedor principal para mantener altura consistente */
+.formWrapper {
+    margin-top: -5vh;
+    max-width: 150vh;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: auto;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    /* Changed to column for better organization */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.formContainer {
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Ajustar el contenedor de preguntas */
+.questionContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    /* Eliminar padding */
+}
+
+.form.questionnaireForm>div {
+    width: 100%;
+    padding: 0;
+    /* Eliminar padding */
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .formWrapper {
+        min-height: 600px;
+    }
+
+    .formContainer {
+        min-height: 500px;
+        padding: 15px;
+    }
+
+    .form.questionnaireForm {
+        padding: 0;
+    }
+}
+
+.form.questionnaireForm .textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 150px;
+    max-height: 300px;
+    /* Limita la altura máxima */
+}
+
+
+.form.questionnaireForm .textarea {
+    background: rgba(255, 255, 255, 0.07);
+    color: #000000;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+.textarea {
+    width: 100%;
+    margin: 10px 0; /* Cambia margin: 5px a margin vertical */
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #2E8CB3 0%, #06345D 100%) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid transparent;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+div {
+    margin-top: 20px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1024px) {
+    .form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .formWrapper {
+        min-height: 600px;
+    }
+
+    .formContainer {
+        min-height: 500px;
+        padding: 15px;
+    }
+
+    .form.questionnaireForm {
+        padding: 10px;
+    }
+
+}
+
+/* Ajustes de animación */
+.slide-out {
+    opacity: 0;
+    transform: translateX(-100%);
+    position: absolute;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 0.3px;
+}
+
+.labelform {
+    text-align: center !important;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #000000;
+}
+
+/* Input and select styles */
+.input,
+.select {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    height: 36px;
+}
+
+/* Submit button container */
+.submitButton {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.submitButton button {
+    padding: 10px 50px;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .form {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .heading {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+}
+
+.description {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration-skip-ink: none;
+}
+
+.label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 200;
+    text-align: center;
+    text-decoration-skip-ink: none;
+}
+
+
+.questionnaireForm .label {
+    font-size: 0.9rem;
+}
+
+.questionnaireForm .textarea {
+    min-height: 80px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Keep animations and other existing styles */
+.slide-out {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contacto {
+        padding: 20px;
+        min-height: calc(100vh - 40px);
+    }
+
+    .formContainer .heading,
+    .formContainer .description {
+        padding: 0 2px;
+    }
+}
+
+::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+}
+
+/* Estilos base del formulario */
+.form {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.form.questionnaireForm>div {
+    width: 100%;
+    padding-right: 0;
+}
+
+
+/* Ajustes responsive específicos para el textarea */
+@media (max-width: 768px) {
+    .form.questionnaireForm {
+        padding: 0 10px;
+    }
+
+    .questionContainer {
+        width: 100%;
+    }
+
+    .form.questionnaireForm .textarea {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+.input,
+.select {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    color: #474747;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form>div {
+    width: 100%;
+    padding-right: 24px;
+    margin-bottom: -10px;
+    /* Para mantener el espaciado del grid gap */
+}
+
+.input,
+.select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* Esto hace que el padding no se sume al width */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #2E8CB3;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #2E8CB3;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #2E8CB3;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.submitButton {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.submitButton button {
+    font-family: 'League Spartan', sans-serif;
+    padding: 12px 40px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ffffff;
+    background: linear-gradient(90deg, #2E8CB3 0%, #06345D 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submitButton button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+option {
+    background-color: #000000;
+    border: 1px solid #D9D9D9;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.select:-webkit-autofill,
+.select:-webkit-autofill:hover,
+.select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.07) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.questionContainer {
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.next.fadeOut {
+    transform: translateX(-100px);
+}
+
+
+.svgButton {
+    position: absolute;
+    bottom: 10px;
+    right: 28px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.svgButton:hover {
+    transform: translateY(-2px);
+}
+
+.svgButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+@media (max-width: 768px) {
+    .contacto {
+        padding: 40px 20px;
+        margin: 10px auto;
+    }
+
+    .heading {
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+}

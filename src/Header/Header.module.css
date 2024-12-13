@@ -1,0 +1,42 @@
+/* SECCION HEADER */
+.header {
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+  
+  .logo,
+  .button-cita {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .header.hidden .logo,
+  .header.hidden .button-cita {
+    opacity: 0;
+  }
+  
+  .logo-black {
+    display: none;
+  }
+  
+  .logo-white {
+    display: block;
+  }
