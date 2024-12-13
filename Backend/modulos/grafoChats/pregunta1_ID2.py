@@ -2,39 +2,42 @@ import modulos.idActual as idActual
 from modulos.grafoChats.grafoChat import *
 import json
 
-def nextState(state):
-    """Simple function to move to next state"""
-    idActual.global_id = 3
-    return json.dumps({"next": state})
+def extraePregunta2(pregunta):
+    """Funcion que extrae la segunda pregunta del usuario y pasa al siguiente ID"""
+    if pregunta:
+        idActual.global_id = 3
+    else:
+        idActual.global_id = 3
+    return json.dumps({"pregunta": pregunta})
 
 lista_de_tools = [
     {
         "type": "function",
         "function": {
-            "name": "nextState",
-            "description": "Moves to next state after first response",
+            "name": "extraePregunta2",
+            "description": "Una el usuario haya hecho la segunda pregunta, se guarda y se pasa al siguiente ID.",
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "state": {
+                    "pregunta": {
                         "type": "string",
-                        "description": "Next state to move to"
+                        "description": "Pregunta del usuario"
                     },
                 },
-                "required": ["state"]
+                "required": ["pregunta"]
             }
         }
     }
 ]
 
 available_functions = {
-    "nextState": nextState
+    "extraePregunta2": extraePregunta2
 }
 
 def getGrafoChatID2():
     prompt = """Eres una asistente virtual llamada IrinA.
-    Responde a la pregunta del usuario de manera clara y detallada.
-    Después de tu respuesta, anima al usuario a hacer otra pregunta si lo desea.
+    Responde a la primera pregunta del usuario de manera clara y detallada.
+    Después de tu respuesta, anima al usuario a hacer otra segunda pregunta si lo desea.
     Se clara y concisa en tu respuesta, y evita el uso de emojis."""
 
     return grafoChat(2, available_functions, lista_de_tools, None, prompt)

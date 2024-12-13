@@ -96,8 +96,8 @@ async def chat_with_gpt_extract_name(input_data: ChatInput, api_key: str = Depen
     idActual.global_msgs = formatted_messages
     traspaso()
     return {
-        "response": chatActual.run_conversation(),
-        "currentBot": idActual.global_id  # Añadir el ID del bot actual
+        "response": chatActual.run_conversation()
+        #,"currentBot": idActual.global_id  # Añadir el ID del bot actual
     }
 
 @app.post("/chatgpt/reset-chat")

@@ -2,33 +2,36 @@ import modulos.idActual as idActual
 from modulos.grafoChats.grafoChat import *
 import json
 
-def nextState(state):
-    """Simple function to move to next state"""
-    idActual.global_id = 4
-    return json.dumps({"next": state})
+def extraePreguntaUltima(pregunta):
+    """Funcion que extrae la segunda pregunta del usuario y pasa al siguiente ID"""
+    if pregunta:
+        idActual.global_id = 4
+    else:
+        idActual.global_id = 4
+    return json.dumps({"pregunta": pregunta})
 
 lista_de_tools = [
     {
         "type": "function",
         "function": {
-            "name": "nextState",
-            "description": "Moves to next state after second response",
+            "name": "extraePreguntaUltima",
+            "description": "Una el usuario haya hecho la ultima pregunta, se guarda y se pasa al siguiente ID.",
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "state": {
+                    "pregunta": {
                         "type": "string",
-                        "description": "Next state to move to"
+                        "description": "Pregunta del usuario"
                     },
                 },
-                "required": ["state"]
+                "required": ["pregunta"]
             }
         }
     }
 ]
 
 available_functions = {
-    "nextState": nextState
+    "extraePreguntaUltima": extraePreguntaUltima
 }
 
 def getGrafoChatID3():
